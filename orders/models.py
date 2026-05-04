@@ -9,6 +9,9 @@ class Order(models.Model):
     total_price = models.DecimalField(max_digits=10, decimal_places=2)
     ordered_at = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        db_table = 'orders'
+
     def __str__(self):
         return f"Order {self.id} - {self.user}"
 
@@ -21,6 +24,9 @@ class Payment(models.Model):
     amount = models.DecimalField(max_digits=10, decimal_places=2)
     paid_at = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        db_table = 'payments'
+
     def __str__(self):
         return f"Payment {self.id}"
 
@@ -30,6 +36,9 @@ class Coupon(models.Model):
     valid_until = models.DateField()
     user = models.ForeignKey('users.User', on_delete=models.SET_NULL, null=True, blank=True)
     is_active = models.BooleanField(default=True)
+
+    class Meta:
+        db_table = 'coupons'
 
     def __str__(self):
         return self.code

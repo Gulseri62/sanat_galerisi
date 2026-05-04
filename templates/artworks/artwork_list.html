@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Eserler</title>
+</head>
+<body>
+    <h2>Tüm Eserler</h2>
+    {% for artwork in artworks %}
+        <div>
+            <h3>{{ artwork.title }}</h3>
+            <p>{{ artwork.category }}</p>
+            <p>{{ artwork.price }} TL</p>
+            <a href="{% url 'artwork_detail' artwork.pk %}">Detaya Git</a>
+        </div>
+    {% endfor %}
+</body>
+</html>

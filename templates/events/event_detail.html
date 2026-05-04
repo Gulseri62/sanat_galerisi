@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ event.title }}</title>
+</head>
+<body>
+    <h2>{{ event.title }}</h2>
+    <p>Tarih: {{ event.event_date }}</p>
+    <p>Saat: {{ event.event_time }}</p>
+    <p>Kontenjan: {{ event.capacity }}</p>
+    <p>Ücret: {{ event.price }} TL</p>
+    <p>{{ event.description }}</p>
+    <a href="{% url 'event_list' %}">Geri Dön</a>
+</body>
+</html>

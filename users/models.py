@@ -8,5 +8,8 @@ class User(models.Model):
     role = models.CharField(max_length=10, choices=[('customer', 'Customer'), ('admin', 'Admin')], default='customer')
     created_at = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        db_table = 'users'
+
     def __str__(self):
         return f"{self.first_name} {self.last_name}"

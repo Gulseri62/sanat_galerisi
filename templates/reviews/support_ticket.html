@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Destek Talebi</title>
+</head>
+<body>
+    <h2>Destek Talebi Oluştur</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="subject" placeholder="Konu" required><br><br>
+        <textarea name="message" rows="5" cols="40" placeholder="Mesajınız"></textarea><br><br>
+        <button type="submit">Gönder</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Favorilerim</title>
+</head>
+<body>
+    <h2>Favorilerim</h2>
+    {% for fav in favorites %}
+        <div>
+            <p>{{ fav.artwork.title }}</p>
+            <a href="{% url 'artwork_detail' fav.artwork.pk %}">Esere Git</a>
+            <a href="{% url 'remove_favorite' fav.artwork.pk %}">Favoriden Çıkar</a>
+        </div>
+    {% endfor %}
+</body>
+</html>

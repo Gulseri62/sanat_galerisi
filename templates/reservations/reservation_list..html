@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Rezervasyonlarım</title>
+</head>
+<body>
+    <h2>Rezervasyonlarım</h2>
+    {% for r in reservations %}
+        <div>
+            <p>Etkinlik: {{ r.event.title }}</p>
+            <p>Katılımcı: {{ r.participant_count }}</p>
+            <p>Durum: {{ r.status }}</p>
+            <a href="{% url 'reservation_cancel' r.pk %}">İptal Et</a>
+        </div>
+    {% endfor %}
+</body>
+</html>

@@ -6,6 +6,9 @@ class Artist(models.Model):
     bio = models.TextField(blank=True, null=True)
     user = models.ForeignKey('users.User', on_delete=models.SET_NULL, null=True, blank=True)
 
+    class Meta:
+        db_table = 'artists'
+
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
 
@@ -17,6 +20,9 @@ class Artwork(models.Model):
     image_url = models.URLField(max_length=500, blank=True, null=True)
     view_count = models.IntegerField(default=0)
     artist = models.ForeignKey(Artist, on_delete=models.CASCADE)
+
+    class Meta:
+        db_table = 'artworks'
 
     def __str__(self):
         return self.title

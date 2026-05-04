@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Siparişlerim</title>
+</head>
+<body>
+    <h2>Siparişlerim</h2>
+    {% for order in orders %}
+        <div>
+            <p>Eser: {{ order.artwork.title }}</p>
+            <p>Tutar: {{ order.total_price }} TL</p>
+            <p>Durum: {{ order.status }}</p>
+            <p>Tarih: {{ order.ordered_at }}</p>
+        </div>
+    {% endfor %}
+</body>
+</html>

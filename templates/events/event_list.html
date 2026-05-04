@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Etkinlikler</title>
+</head>
+<body>
+    <h2>Tüm Etkinlikler</h2>
+    {% for event in events %}
+        <div>
+            <h3>{{ event.title }}</h3>
+            <p>Tarih: {{ event.event_date }}</p>
+            <p>Saat: {{ event.event_time }}</p>
+            <p>Kontenjan: {{ event.capacity }}</p>
+            <p>Ücret: {{ event.price }} TL</p>
+            <a href="{% url 'event_detail' event.pk %}">Detaya Git</a>
+        </div>
+    {% endfor %}
+</body>
+</html>

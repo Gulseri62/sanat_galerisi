@@ -11,6 +11,9 @@ class Review(models.Model):
     is_verified = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        db_table = 'reviews'
+
     def __str__(self):
         return f"Review {self.id} by {self.user}"
 
@@ -20,6 +23,7 @@ class Favorite(models.Model):
     added_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
+        db_table = 'favorites'
         unique_together = ('user', 'artwork')
 
     def __str__(self):
@@ -34,6 +38,9 @@ class SupportTicket(models.Model):
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='open')
     created_at = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        db_table = 'support_tickets'
+
     def __str__(self):
         return f"{self.subject} - {self.user}"
 
@@ -44,6 +51,9 @@ class Comparison(models.Model):
     item_type = models.CharField(max_length=10, choices=ITEM_CHOICES)
     item_ids = models.CharField(max_length=255)
     saved_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        db_table = 'comparisons'
 
     def __str__(self):
         return f"Comparison {self.id} by {self.user}"

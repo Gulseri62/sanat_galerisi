@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Rezervasyon Yap</title>
+</head>
+<body>
+    <h2>{{ event.title }} - Rezervasyon</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <label>Katılımcı Sayısı:</label>
+        <input type="number" name="participant_count" min="1" max="{{ event.capacity }}" required><br><br>
+        <button type="submit">Rezervasyon Yap</button>
+    </form>
+</body>
+</html>

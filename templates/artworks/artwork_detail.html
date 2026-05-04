@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ artwork.title }}</title>
+</head>
+<body>
+    <h2>{{ artwork.title }}</h2>
+    <p>Sanatçı: {{ artwork.artist }}</p>
+    <p>Kategori: {{ artwork.category }}</p>
+    <p>Fiyat: {{ artwork.price }} TL</p>
+    <p>{{ artwork.description }}</p>
+    <a href="{% url 'artwork_list' %}">Geri Dön</a>
+</body>
+</html>
